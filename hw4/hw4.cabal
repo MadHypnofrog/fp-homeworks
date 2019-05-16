@@ -19,8 +19,13 @@ tested-with:         GHC == 8.0.1
 library
   hs-source-dirs:      src
   exposed-modules:     Lib
-  ghc-options:         -Wall
+  ghc-options:         
   build-depends:       base >= 4.9 && < 5
+                       , split >= 0.2.3.3
+                       , parallel >= 3.2.2.0
+                       , random
+                       , vector
+                       , deepseq
   default-language:    Haskell2010
 
 executable hw4
@@ -29,6 +34,7 @@ executable hw4
   ghc-options:         -Wall -Werror -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
                      , hw4
+                     , criterion
   default-language:    Haskell2010
 
 test-suite hw4-test
